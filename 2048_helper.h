@@ -6,6 +6,7 @@ using namespace std;
 void move_left(int board[][5], int numrows = 5)
 {
 	//CODE HERE
+	// Ethan, this is Derrick, let me know if you can see this
 }
 
 void move_right(int board[][5], int numrows = 5)
