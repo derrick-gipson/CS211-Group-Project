@@ -51,6 +51,16 @@ bool move_left(int board[][5], int &pointsGained, int numrows)
 
 
         //Step 3: Copy the results back 
+
+        for (int col = 0; col < 5; col++)
+        {
+            if (board[row][col] != result[col]) // if this number doesnt match, there was a change
+            {
+                boardChanged = true;
+            }
+
+            board[row][col] = result[col]; // save the new row values from result to the board
+        }
     
     }
     return boardChanged;
