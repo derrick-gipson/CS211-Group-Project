@@ -11,6 +11,7 @@ int main()
 	int highestTile = 0;
 	int board[5][5] = {0};
 	bool hasWon = false;
+	bool gameOver = false;
 
 	insert_random(board, size);
 	insert_random(board, size);
@@ -42,6 +43,13 @@ int main()
 		cout << "Please enter choice:{u,d,l,r,e} for UP, DOWN, LEFT, RIGHT, Exit: " << endl;
 		cout << "Choice: ";
 		cin >> choice;
+
+		if (gameOver && (choice == 'u' || choice == 'd' || choice == 'l' || choice == 'r'))
+		{
+    		cout << "Game Over! You cannot move any more tiles." << endl;
+   	 		cout << "You can save, load, start a new game, view help, or exit." << endl;
+    		continue;
+		}
 
 
 		if (choice != 'e')
@@ -95,7 +103,7 @@ int main()
 			hasWon=true;
 		}
 
-		bool gameOver = true;
+		 gameOver = true;
 
 		for (int row = 0; row < size; row++)
 		{
@@ -118,9 +126,9 @@ int main()
 		if (gameOver == true)
 		{
 			cout << "Game Over! No more moves are possible." << endl;
-			cout << "Final Score: " << score << endl;
+			cout << "Score at Game Over: " << score << endl;
 			cout << "Total Successful Moves: " << moveCount << endl;
-			break;
+			cout << "You can save, load, start a new game, view help, or exit." << endl;
 		}
 
 		}
