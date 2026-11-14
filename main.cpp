@@ -44,6 +44,74 @@ int main()
 		cout << "Choice: ";
 		cin >> choice;
 
+		//help command
+		if (choice == 'h')
+		{
+  			cout << "\nGame Controls:" << endl;
+    		cout << "u - Move Up" << endl;
+  			cout << "d - Move Down" << endl;
+		    cout << "l - Move Left" << endl;
+ 		   cout << "r - Move Right" << endl;
+		    cout << "s - Save Game" << endl;
+		    cout << "o - Open Saved Game" << endl;
+		    cout << "n - New Game" << endl;
+		    cout << "h - Help" << endl;
+		    cout << "e - Exit" << endl;
+
+		    cout << "\nMerge equal tiles to earn points." << endl;
+		    cout << "Reach 2048 to win!" << endl;
+		    cout << "Saving replaces the previous savegame.txt file." << endl;
+
+		    continue;
+		}
+
+		//new game code
+		if (choice == 'n')
+		{
+			char confirmation = 'n';
+
+			cout << "Are you sure you want to start a new game? (y/n): ";
+			cin >> confirmation;
+			if (confirmation == 'y' || confirmation == 'Y')
+			{
+				for (int row = 0; row < size; row++)
+				{
+ 				   for (int col = 0; col < 5; col++)
+					{
+ 				       board[row][col] = 0;
+ 				    }
+				}
+				score = 0;
+				moveCount = 0;
+				hasWon = false;
+				gameOver = false;
+
+				insert_random(board, size);
+				insert_random(board, size);
+				highestTile = 2;
+				cout << "New Game Started!" << endl;
+
+				print_board(board);
+				cout << "Score: " << score << endl;
+				cout << "Successful Moves: " << moveCount << endl;
+				cout << "Highest Tile: " << highestTile << endl;
+			}
+			else
+			{
+				cout << "New game canceled." << endl;
+			}
+			continue;
+		}
+
+
+
+		if (choice != 'u' && choice != 'd' && choice != 'l' && choice != 'r' && choice != 's' && choice != 'o' && choice != 'n' && choice != 'h' && choice != 'e')
+		{
+		    cout << "Invalid choice. Please try again." << endl;
+ 		   continue;
+		}
+
+
 		if (gameOver && (choice == 'u' || choice == 'd' || choice == 'l' || choice == 'r'))
 		{
     		cout << "Game Over! You cannot move any more tiles." << endl;
