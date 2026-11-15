@@ -1,4 +1,4 @@
-This file defines the interface for our validation and calculation functions.
+//This file defines the interface for our validation and calculation functions.
 #ifndef LUHN_H
 #define LUHN_H
 

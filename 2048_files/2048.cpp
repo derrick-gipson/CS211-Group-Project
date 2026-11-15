@@ -1,6 +1,6 @@
 #include<iostream>
 #include<iomanip>
-#include "2048_helper.h"
+#include "2048.h"
 #include <cstdlib>
 
 using namespace std;
