@@ -23,7 +23,7 @@ int main()
 	while (choice != 'e')
 	{
 
-		cout << "Please enter choice:{u,d,l,r,e} for UP, DOWN, LEFT, RIGHT, Exit: " << endl;
+		cout << "Please enter choice:{u,d,l,r,h,s,o} for UP, DOWN, LEFT, RIGHT, Help, Save, Load, Exit: " << endl;
 		cout << "Choice: ";
 		cin >> choice;
 
