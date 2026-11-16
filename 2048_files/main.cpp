@@ -201,6 +201,7 @@ int main()
 		}
 
 		}
+	}
 
 char choice;
 cout << "Press 's' to save, 'l' to load, or any other key to continue: ";
