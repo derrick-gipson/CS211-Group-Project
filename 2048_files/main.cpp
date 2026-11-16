@@ -121,7 +121,33 @@ int main()
 		}
 
 
-		if (choice == 'u' || choice == 'd' || choice == 'l' || choice == 'r')
+		// Save game
+		if (choice == 's')
+		{
+	    saveGame(board, score, size);
+    	continue;
+	}
+
+	// Load game
+	if (choice == 'o')
+	{
+   	 loadGame(board, score, size);
+
+    	// Reset gameplay status
+    	gameOver = false;
+    	hasWon = false;
+    	highestTile = 0;
+
+    	// Display the board and score
+    	print_board(board);
+
+    	cout << "Score: " << score << endl;
+
+    	continue;
+		}
+
+
+		if (choice != 'e')
 		{
 			int pointsGained = 0;
 			bool changed = false;
@@ -203,16 +229,7 @@ int main()
 		}
 	}
 
-char choice;
-cout << "Press 's' to save, 'l' to load, or any other key to continue: ";
-cin >> choice;
 
-if (choice == 's') {
-    saveGame(board, score, 5); // Assuming 5 is your row count
-} else if (choice == 'l') {
-    loadGame(board, score, 5);
-}
 
-	
 	return 0;
 }
