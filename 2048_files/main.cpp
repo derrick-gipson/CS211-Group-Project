@@ -40,7 +40,7 @@ int main()
 	while (choice != 'e')
 	{
 
-		cout << "Please enter choice:{u,d,l,r,n,h,s,o,e} for UP, DOWN, LEFT, RIGHT, Exit, Help, Save, Load, Exit: " << endl;
+		cout << "Please enter choice:{u,d,l,r,n,h,s,o,e}" << endl << "UP, DOWN, LEFT, RIGHT, New Game, Help, Save, Load, Exit" << endl;
 		cout << "Choice: ";
 		cin >> choice;
 
@@ -120,7 +120,7 @@ int main()
 		}
 
 
-		if (choice != 'e')
+		if (choice == 'u' || choice == 'd' || choice == 'l' || choice == 'r')
 		{
 			int pointsGained = 0;
 			bool changed = false;
