@@ -1,5 +1,6 @@
 #include <iostream>
 #include "2048.h"
+#include "save_load.h"
 
 using namespace std;
 
@@ -200,9 +201,18 @@ int main()
 		}
 
 		}
+	}
 
+char choice;
+cout << "Press 's' to save, 'l' to load, or any other key to continue: ";
+cin >> choice;
 
+if (choice == 's') {
+    saveGame(board, score, 5); // Assuming 5 is your row count
+} else if (choice == 'l') {
+    loadGame(board, score, 5);
+}
 
-
+	
 	return 0;
 }
