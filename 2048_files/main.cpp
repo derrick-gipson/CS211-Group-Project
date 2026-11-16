@@ -204,6 +204,16 @@ int main()
 
 	}
 
+	    char choice;
+    cout << "Press 's' to save, 'l' to load: ";
+    cin >> choice;
+
+    if (choice == 's') {
+        saveGame(board, score, 4); // Use your actual row count (e.g., 4 or 5)
+    } else if (choice == 'l') {
+        loadGame(board, score, 4);
+    }
+
 
 	return 0;
 }
